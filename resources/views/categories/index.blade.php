@@ -10,7 +10,7 @@
     <h1>Categories</h1>
 
     <div>
-        <form action="{{route('categories.store')}}" method="post">
+        <form action="{{-- {{route('categories.store')}}--}}" method="post">
                 @csrf
             
                 <label for="name">Name</label>
