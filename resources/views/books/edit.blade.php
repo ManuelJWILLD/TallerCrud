@@ -9,11 +9,12 @@
 </head>
 
 <body>
-    <form action="{{ route('categories.update', $category->id) }}" method="post">
+    <form action="{{ route('books.update', $books->id) }}" method="post">
         @csrf
         @method('PUT')
-        <input type="text" name="name" placeholder="Category Name" value="{{ $category->name }}">
-        <input type="text" name="description" placeholder="Category Description" value="{{ $category->description }}">
+        <input type="text" name="tittle" placeholder="Books tittle" value="{{ $books->tittle }}">
+        <input type="text" name="genre" placeholder="Books genre" value="{{ $books->genre }}">
+        <input type="date" name="pubdate" placeholder="Books pubdate" value="{{$books->pubdate }}">
         <button type="submit">Submit</button>
     </form>
 
