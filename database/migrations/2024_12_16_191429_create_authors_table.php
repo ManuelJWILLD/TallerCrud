@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('author', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->string('nacionality');
+            $table->date('birth_date');
         });
     }
 
