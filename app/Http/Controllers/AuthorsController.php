@@ -51,7 +51,6 @@ class AuthorsController extends Controller
     public function edit(string $id)
     {
         $author = Authors::find($id);
-        $author = Authors::all();
         return view('authors.edit', compact('author'));
     }
 

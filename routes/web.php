@@ -18,6 +18,7 @@ use App\Http\Controllers\AuthorsController;
 Route::get('/authors', [AuthorsController::class, 'index'])->name('authors.index');
 Route::post('/authors', [AuthorsController::class, 'store'])->name('authors.store');
 Route::get('/authors/{id}', [AuthorsController::class, 'edit'])->name('authors.edit');
+Route::put('/authors/{id}', [AuthorsController::class, 'update'])->name('authors.update');
 Route::delete('/authors/{id}', [AuthorsController::class, 'destroy'])->name('authors.destroy');
 
 
