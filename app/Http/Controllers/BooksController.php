@@ -53,7 +53,7 @@ class BooksController extends Controller
     {
         $Books = Books::find($id);
         $Books = Books::all();
-        return view('books.edit', compact('Books', 'authors'));
+        return view('books.edit', compact('Books'));
     }
 
     /**

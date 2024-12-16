@@ -24,17 +24,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($categories as $category)
+            @foreach ($books as $books)
                 <tr>
-                    <td>{{ $category->name }}</td>
-                    <td>{{ $category->description }}</td>
+                    <td>{{ $books->tittle }}</td>
+                    <td>{{ $books->pubdate }}</td>
+                    <td>{{ $books->genre }}</td>
                     <td>
-                        <form action="{{ route('categories.destroy', $category->id) }}" method="post">
+                        <form action="{{ route('books.destroy', $books->id) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit">Delete</button>
                         </form>
-                        <a href="{{ route('categories.edit', $category->id) }}">Edit</a>
+                        <a href="{{ route('books.edit', $books->id) }}">Edit</a>
                     </td>
                 </tr>
             @endforeach
