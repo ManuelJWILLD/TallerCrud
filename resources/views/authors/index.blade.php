@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Categories</h1>
+    <h1>Authors</h1>
 
     <div>
         <form action="{{-- {{route('categories.store')}}--}}" method="post">
                 @csrf
             
-                <label for="name">Name</label>
+                <label for="name">Nombre</label>
                 <input type="text" name="name" id="name">
 
                 <label for="nationality">Nacionalidad</label>
@@ -26,10 +26,10 @@
         </form>
     </div>
 
-    <h1>Categories</h1>
+    <h1>Authors</h1>
     <ul>
-        @foreach ($categories as $categories)
-            <li>{{ $categories->name }}</li>
+        @foreach ($authors as $authors)
+            <li>{{ $authors->name }}</li>
         @endforeach
     </ul>
 
