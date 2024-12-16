@@ -29,12 +29,12 @@
     <table>
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Nombre</th>
                 <th>Descripción</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($authors as $author)
+            @foreach ($authors as $authors)
                 <tr>
                     <td>{{ $authors->name }}</td>
                     <td>{{ $authors->nacionality }}</td>
