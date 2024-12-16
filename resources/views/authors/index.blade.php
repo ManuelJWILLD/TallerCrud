@@ -25,15 +25,30 @@
                 <button type="submit">Guardar</button>
         </form>
     </div>
-
-    <h1>Authors</h1>
-    <ul>
-        @foreach ($authors as $authors)
-            <li>{{ $authors->name }}</li>
-            <li>{{ $authors->nacionality }}</li>
-            <li>{{ $authors->birth_date }}</li>
-        @endforeach
-    </ul>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($authors as $author)
+                <tr>
+                    <td>{{ $authors->name }}</td>
+                    <td>{{ $authors->nacionality }}</td>
+                    <td>
+                        <form action="{{ route('authors.destroy', $authors->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
+                        <a href="{{ route('authors.edit', $authors->id) }}">Edit</a>
+                    </td>
+                </tr>
+            @endforeach
+    </table>
 
 </body>
 </html>

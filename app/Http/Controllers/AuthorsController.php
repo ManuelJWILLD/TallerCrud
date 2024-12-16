@@ -50,7 +50,9 @@ class AuthorsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $Authors = Authors::find($id);
+        $Authors = Authors::all();
+        return view('authors.edit', compact('authors'));
     }
 
     /**
@@ -58,7 +60,12 @@ class AuthorsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $Authors = Authors::find($id);
+        $Authors ->name = $request->name;
+        $Authors ->nacionality = $request->nacionality;
+        $Authors ->birth_date = $request->birth_date;
+        $Authors ->save();
+        return redirect()->route('authors.index');
     }
 
     /**
@@ -66,6 +73,8 @@ class AuthorsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $Authors = Authors::find($id);
+        $Authors->delete();
+        return redirect()->route('authors.index');
     }
 }
