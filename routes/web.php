@@ -14,4 +14,4 @@ use App\Http\Controllers\CategoriesController;
 |
 */
 
-Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
+Route::get('/', [CategoriesController::class, 'index'])->name('categories.index');
