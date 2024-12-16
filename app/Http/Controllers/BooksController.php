@@ -13,7 +13,8 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        $Books = books::all();
+        return view('products.index', compact('products', 'categories'));
     }
 
     /**
@@ -29,7 +30,12 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Books = new Product();
+        $Books->tittle = $request->tittle;
+        $Books->date = $request->date;
+        $Books-> pubdate = $request->pubdate;
+        $Books->save();
+        return redirect()->route('books.index');
     }
 
     /**
@@ -45,7 +51,9 @@ class BooksController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $Books = Books::find($id);
+        $Books = Books::all();
+        return view('books.edit', compact('Books', 'authors'));
     }
 
     /**
@@ -53,7 +61,12 @@ class BooksController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $Books = Books::find($id);
+        $Books ->tittle = $request->tittle;
+        $Books ->pubdate = $request->pubdate;
+        $Books ->genre = $request->genre;
+        $Books ->save();
+        return redirect()->route('books.index');
     }
 
     /**
@@ -61,6 +74,8 @@ class BooksController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $Books = Books::find($id);
+        $Books->delete();
+        return redirect()->route('books.index');
     }
 }
