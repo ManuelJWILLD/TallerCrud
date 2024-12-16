@@ -15,3 +15,5 @@ use App\Http\Controllers\AuthorsController;
 */
 
 Route::get('/authors', [AuthorsController::class, 'index'])->name('authors.index');
+Route::post('/authors', [AuthorsController::class, 'store'])->name('authors.store');
+

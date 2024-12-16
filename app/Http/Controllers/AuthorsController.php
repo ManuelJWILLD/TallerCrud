@@ -29,7 +29,12 @@ class AuthorsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $author = new Authors();
+        $author->name = $request->name;
+        $author->nacionality = $request->nacionality;
+        $author->birth_date = $request->birth_date;
+        $author->save();
+        return redirect()->route('authors.index');
     }
 
     /**

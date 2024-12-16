@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('tittle');
             $table->date('pubdate');
             $table->string('genre');
-    
-
+            $table->timestamps();
         });
     }
 
