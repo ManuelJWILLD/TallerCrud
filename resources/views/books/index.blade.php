@@ -9,26 +9,40 @@
 </head>
 
 <body>
-    <form action="{{ route('categories.store') }}" method="post">
-        @csrf
-        <input type="text" name="name" placeholder="Category Name">
-        <input type="text" name="description" placeholder="Category Description">
-        <button type="submit">Submit</button>
-    </form>
+    <h1>Books</h1>
+
+    <div>
+        <form action="{{ route('books.store') }}" method="post">
+            @csrf
+
+            <label for="tittle">Titulo</label>
+            <input type="text" name="tittle" id="tittle">
+
+            <label for="genre">Genero</label>
+            <input type="text" name="genre" id="genre">
+
+            <label for="pubdate">Fecha de publicacion</label>
+            <input type="date" name="pubdate" id="pubdate">
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>    
 
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Descripción</th>
+                <th>Titulo</th>
+                <th>Genero</th>
+                <th>Fecha de Publicacion</th>
+
             </tr>
         </thead>
         <tbody>
             @foreach ($books as $books)
                 <tr>
                     <td>{{ $books->tittle }}</td>
-                    <td>{{ $books->pubdate }}</td>
                     <td>{{ $books->genre }}</td>
+                    <td>{{ $books->pubdate }}</td>
                     <td>
                         <form action="{{ route('books.destroy', $books->id) }}" method="post">
                             @csrf

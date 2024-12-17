@@ -14,7 +14,7 @@
         @method('PUT')
         <input type="text" name="name" placeholder="Authors Name" value="{{ $author->name }}">
         <input type="text" name="nacionality" placeholder="Authors Nacionality" value="{{ $author->nacionality }}">
-        <input type="date" name="birth_date" id="birth_date">
+        <input type="date" name="birth_date" id="birth_date" placeholder="Authors Birth Date" value="{{ $author->birth_date }}">
         <button type="submit">Submit</button>
     </form>
 
