@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Book</title>
 </head>
 
 <body>
@@ -19,7 +19,13 @@
             <input type="text" name="tittle" id="tittle">
 
             <label for="genre">Genero</label>
-            <input type="text" name="genre" id="genre">
+            <select name="genre" id="genre" required>
+                <option selected disabled>Seleccione Una Opcion</option>
+                <option>Terror</option>
+                <option>Accion</option>
+                <option>Drama</option>
+                <option>Ciencia Ficcion</option>
+            </select>
 
             <label for="pubdate">Fecha de publicacion</label>
             <input type="date" name="pubdate" id="pubdate">
