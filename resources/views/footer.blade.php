@@ -20,10 +20,10 @@ FOOTER
 <!--------------------------------------
 JAVASCRIPTS
 --------------------------------------->
-<script src="./assets/js/vendor/jquery.min.js" type="text/javascript"></script>
-<script src="./assets/js/vendor/popper.min.js" type="text/javascript"></script>
-<script src="./assets/js/vendor/bootstrap.min.js" type="text/javascript"></script>
-<script src="./assets/js/functions.js" type="text/javascript"></script>
+<script src={{ asset('assets/js/vendor/jquery.min.js') }} type="text/javascript"></script>
+<script src={{ asset('assets/js/vendor/popper.min.js') }} type="text/javascript"></script>
+<script src={{ asset('assets/js/vendor/bootstrap.min.js') }} type="text/javascript"></script>
+<script src={{ asset('assets/js/functions.js') }} type="text/javascript"></script>
 </body>
 </html>
 

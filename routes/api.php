@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+    Route::get('/authors', [AuthorApiController::class, 'index'])->name('authors.index');
+    Route::post('/authors', [AuthorApiController::class, 'store'])->name('authors.store');
+    Route::get('/authors/{id}', [AuthorApiController::class, 'edit'])->name('authors.edit');
+    Route::put('/authors/{id}', [AuthorApiController::class, 'update'])->name('authors.update');
+    Route::delete('/authors/{id}', [AuthorApiController::class, 'destroy'])->name('authors.destroy');
