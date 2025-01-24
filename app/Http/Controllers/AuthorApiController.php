@@ -40,38 +40,46 @@ class AuthorApiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $author = Authors:: find($id);
+        return response()->json($author);
+    }
+
+    public function nacionalidad(Request $request)
+    {
+        $nacionality = $request-> nacionality;
+        $author = Authors:: where('nacionality', $nacionality)->get();
+        return response()->json($author);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    //public function edit(string $id)
-    //{
-    //    $author = Authors::find($id);
-    //    return view('authors.edit', compact('author'));
-    //}
+    public function edit(string $id)
+    {
+        $author = Authors::find($id);
+        return view('authors.edit', compact('author'));
+    }
 
     /**
      * Update the specified resource in storage.
      */
-    //public function update(Request $request, string $id)
-    //{
-    //    $author = Authors::find($id);
-    //    $author ->name = $request->name;
-    //    $author ->nacionality = $request->nacionality;
-    //    $author ->birth_date = $request->birth_date;
-    //    $author ->save();
-    //    return redirect()->route('authors.index');
-    //}
+    public function update(Request $request, string $id)
+    {
+        $author = Authors::find($id);
+        $author ->name = $request->name;
+        $author ->nacionality = $request->nacionality;
+        $author ->birth_date = $request->birth_date;
+        $author ->save();
+        return response()->json($author);
+    }
 
     /**
      * Remove the specified resource from storage.
      */
-    //public function destroy(string $id)
-    //{
-    //    $author = Authors::find($id);
-    //    $author->delete();
-    //    return redirect()->route('authors.index');
-    //}
+    public function destroy(string $id)
+    {
+        $author = Authors::find($id);
+        $author->delete();
+        return redirect()->route('authors.index');
+    }
 }

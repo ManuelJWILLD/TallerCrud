@@ -32,11 +32,17 @@ Route::middleware('auth')->group(function (){
 
 });
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 route::get('/', function(){
     return view('welcome');
+});
+
+Route::middleware('auth', 'role:estudiante')->group(function (){
+    Route::get('/estudiante', function() {
+        return "estudiante";
+    });
 });
